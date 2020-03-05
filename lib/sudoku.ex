@@ -7,6 +7,7 @@ defmodule Sudoku do
     filepath
     |> File.read!()
     |> String.split("\n", trim: true)
+    |> Enum.map(&eval/1)
   end
 
   def eval(text) do
